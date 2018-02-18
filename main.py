@@ -1,15 +1,13 @@
 from display import *
 from draw import *
 from matrix import *
+import random
 
 screen = new_screen()
 color = [ 0, 255, 0 ]
 matrix = new_matrix()
-matrix1 = [
-    [1,1,0],
-    [2,1,0],
-    [1,2,0]
-]
+matrix1 = []
+
 matrix2 = [
     [2,1,0],
     [1,1,0],
@@ -48,5 +46,14 @@ print_matrix(ident(matrix3))
 print "Printing mult matrix ...."
 print_matrix(matrix_mult(matrix3, matrix4))
 
-draw_lines( matrix, screen, color )
-#display(screen)
+print "Adding edges..."
+for i in range(300):
+    x1=random.randint(1,500)
+    y1=random.randint(1,500)
+    add_edge(matrix1,250,250,0,x1,y1,0)
+
+
+print "Drawing lines....."
+draw_lines( matrix1, screen, color )
+
+display(screen)
