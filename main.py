@@ -63,3 +63,4 @@ print "Drawing lines....."
 draw_lines( matrix1, screen, color )
 
 display(screen)
+save_extension(screen, 'snowflake.png')
