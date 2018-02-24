@@ -4,7 +4,7 @@ from matrix import *
 import random
 
 screen = new_screen()
-color = [ 0, 255, 0 ]
+color = [ 255, 255, 255 ]
 matrix = new_matrix()
 matrix1 = []
 
@@ -41,16 +41,22 @@ print_matrix_p(matrix3)
 #print_matrix(matrix1)
 
 print "Printing identity matrix ... "
-print_matrix(ident(matrix3))
+print_matrix_p(ident(matrix3))
 
 print "Printing mult matrix ...."
-print_matrix(matrix_mult(matrix3, matrix4))
+print_matrix_p(matrix3)
+print "times"
+print_matrix_p(matrix4)
+print_matrix_p(matrix_mult(matrix3, matrix4))
 
 print "Adding edges..."
-for i in range(300):
-    x1=random.randint(1,500)
-    y1=random.randint(1,500)
-    add_edge(matrix1,250,250,0,x1,y1,0)
+for i in range(100):
+    x0=random.randint(1,500)
+    y0=random.randint(1,500)
+    for j in range(15):
+        x1=random.randint(-5,5)+x0
+        y1=random.randint(-5,5)+y0
+        add_edge(matrix1,x0,y0,0,x1,y1,0)
 
 
 print "Drawing lines....."
